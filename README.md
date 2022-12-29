@@ -1,4 +1,4 @@
-# Expense-Tracker
+# Expense Tracker
 It's Web Application which help users to track their money whether it's expenses or incomes. Using ASP.NET Core 6 (Razor Pages) and Synfusion library (Front-End),
 This application was able to give great "Data visualization" for the saved records (Expenses & Incomes).
 
