@@ -1,0 +1,67 @@
+@{
+    List<Object> menu = new List<Object>();
+    
+    menu.Add(new {
+            text = "General",
+            separator = true
+        });
+
+    menu.Add(new {
+            text = "Dashboard",
+            url = "/",
+            iconCss = "fa-solid fa-box"
+        });
+    
+    menu.Add(new {
+            text = "Categories",
+            url = "/Category",
+            iconCss = "fa-solid fa-folder-closed"
+        });
+
+    menu.Add(new {
+            text = "Transactions",
+            url = "/Transaction",
+            iconCss = "fa-solid fa-arrow-right-arrow-left"
+        });
+
+    menu.Add(new {
+            text = "Extra",
+            separator = true
+        });
+
+    menu.Add(new {
+            text = "Reports",
+            url = "#",
+            iconCss = "fa-solid fa-chart-simple"
+        });
+    
+    menu.Add(new {
+            text = "Settings",
+            url = "#",
+            iconCss = "fa-solid fa-gear"
+        });
+}
+
+
+<ejs-sidebar id="sidebar" width="290px" enableDock dockSize="100px" target=".dock-target">
+    <e-content-template>
+        <div class="logo-wrapper">
+            <div class="app-logo">
+                <img src="~/logo.png" />
+            </div>
+            <div class="w-100"></div>
+            <i id="sidebar-toggler" class="fa-solid fa-angles-left"></i>
+        </div>
+
+        <ejs-menu id="menu" items="@menu" orientation="Vertical"></ejs-menu>
+    </e-content-template>
+</ejs-sidebar>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        dockBar = document.getElementById("sidebar").ej2_instances[0];
+        document.getElementById("sidebar-toggler").onclick = function (){
+            dockBar.toggle();
+        };
+    });
+</script>
